@@ -6,19 +6,18 @@ function createWindow() {
   const win = new BrowserWindow({
     width: 1200,
     height: 800,
-    show: false, // 先隐藏窗口，防止加载时出现白屏闪烁
+    show: false, 
     resizable: true,
     webPreferences: {
       nodeIntegration: true,
-      contextIsolation: false, // 关键：无需修改前端代码即可使用 localStorage 和全局变量
-      webSecurity: false       // 允许本地文件协议，避免跨域限制
+      contextIsolation: false, 
+      webSecurity: false
     }
   });
 
-  // 加载 Vue 打包后的 dist/index.html
   win.loadFile(path.join(__dirname, '../dist/index.html'));
 
-  // 页面加载完成后显示窗口，提升体验
+  // 页面加载完成后显示窗口
   win.once('ready-to-show', () => {
     win.show();
   });
