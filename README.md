@@ -12,7 +12,6 @@ npm install --save-dev electron electron-builder
 ```
 ---
 ### If you don't need to package it for the desktop version, you can directly click on 
-> [!INFO]
 > "dist" => "index.html" 
 
 ### or run:
